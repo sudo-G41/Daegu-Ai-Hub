@@ -11,7 +11,7 @@
         }
     </style>
 </head>
-<body>
+<body id="root">
     <h1>WEB</h1>
     <ol>
         <li>html</li>
@@ -19,5 +19,27 @@
         <li>js</li>
     </ol>
     <h2>Welcome</h2>
+    <input type="button" value="Night" class="NightDayMode" onclick="mode(this)">
+    <script>
+        function mode(cls){
+            if(cls.value == 'Night'){
+                night(cls);
+            }
+            else{
+                day(cls);
+            }
+        }
+        function night(cls){
+            document.querySelector('#root').style.backgroundColor = "#000000";
+            document.querySelector('#root').style.color = "#ffffff";
+            cls.value = "Day";
+            
+        }
+        function day(cls){
+            document.querySelector('#root').style.backgroundColor = "#ffffff";
+            document.querySelector('#root').style.color = "#000000";
+            cls.value = "Night";
+        }
+    </script>
 </body>
 </html>
